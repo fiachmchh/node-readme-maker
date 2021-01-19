@@ -1,10 +1,6 @@
-// TODO: Include packages needed for this application
-
 var inquirer = require('inquirer');
 const fs = require('fs');
 
-
-// TODO: Create an array of questions for user input
 inquirer
   .prompt([
     {
@@ -35,7 +31,7 @@ inquirer
     {
         name: "deployed",
         type: "input",
-        message: "Please provide a link to your deployed application here.",
+        message: "Please provide a link to your deployed application.",
     },
     {
         name: "installation",
@@ -50,7 +46,7 @@ inquirer
     {
         name: "credits",
         type: "input",
-        message: "Please list any collabortors on this project",
+        message: "Please list any collaborators on this project",
     },
     {
         name: "license",
@@ -65,12 +61,12 @@ inquirer
     {
         name: "features",
         type: "input",
-        message: "Please list any features that your project has here.",
+        message: "If your project has many features please list those here.",
     },
     {
         name: "contributing",
         type: "input",
-        message: "You can follow the link for instructions on contributing. Press return to continue",
+        message: "You can follow the link for instructions on contributions through the readme. Press return to continue",
     },
     {
         name: "tests",
@@ -80,13 +76,8 @@ inquirer
     
   ])
 
-  // TODO: Create a function to write README file
-
   .then(answers => {
-    // Use user feedback for... whatever!!
-    console.log(answers)
-
-
+    
     var newReadMe = `
 
     # Title : ${answers.title}
@@ -140,17 +131,16 @@ inquirer
     ${answers.tests}
 
 `
-// TODO: Create a function to initialize app
 
 fs.writeFile('newReadMe.md', newReadMe, function (err) {
     if (err) throw err;
     console.log('Saved!');
 });
-console.log('New Readme!!', newReadMe)
-
 
 })
 
-// Function call to initialize app
+
+
+
 
 
